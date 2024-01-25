@@ -40,8 +40,7 @@ useEffect(() => {
 
   return (
     (!authUser)?<Spinner/>:
-    <div className="">
-      <h1>Dashboard</h1>
+    <div className="backdrop-filter backdrop-blur-md bg-opacity-50 bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50">
       {isCampaignsEmpty && (
         <p className="text-center text-gray-500 mt-10">
           No campaigns found. Click button at the bottom to start a new campaign.

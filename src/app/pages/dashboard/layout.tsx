@@ -1,8 +1,7 @@
 'use client'
 import Navigation from '@/app/components/navigation/page'
 import { useAuthContext } from '../../../../firebase/auth'
-import { useRouter } from 'next/navigation';
-import { FC, useEffect, useState } from 'react';
+import { useState } from 'react';
 import NewCampaignModal from '@/app/components/modals/new-campaign/page';
 
 
@@ -11,8 +10,8 @@ export default function Layout({
 }: {
   children: React.ReactNode
 }) {
-    const router = useRouter();
-    const{authUser, isLoading} = useAuthContext();
+
+    const{authUser} = useAuthContext();
     const [showModal, setShowModal] = useState(false);
 
   const handleCreateCampaign = () => {
@@ -21,13 +20,7 @@ export default function Layout({
     // Optionally, you can navigate to a new page or perform other actions
   };
   
-  
 
-  // useEffect(() => {
-  //   if(!authUser && !isLoading){
-  //     router.push("/");
-  //   }
-  // }, [authUser, isLoading]);
     return (
       <div className="relative">
         {authUser && <Navigation />}
